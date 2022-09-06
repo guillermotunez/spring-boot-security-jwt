@@ -33,4 +33,6 @@ build/
 .vscode/
 
 .m2
+*.mv.db
+*.trace.db
 derby.log
