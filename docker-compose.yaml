@@ -17,6 +17,7 @@ services:
   spring-boot-app:
     depends_on:
       - postgresql-db
+      - redis
     build: ./
     restart: on-failure
     env_file: ./.env
@@ -29,7 +30,8 @@ services:
         "spring.datasource.password" : "$POSTGRES_PASSWORD",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect",
         "spring.jpa.hibernate.ddl-auto" : "none",
-        "retrofit.percentage.url" : "http://mock-service:9999/"
+        "retrofit.percentage.url" : "http://mock-service:9999/",
+        "spring.redis.host" : "redis"
       }'
 #    volumes:
 #      - .m2:/root/.m2
