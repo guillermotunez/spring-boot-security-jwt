@@ -1,4 +1,4 @@
-package com.challenge.controllers;
+package com.challenge.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;

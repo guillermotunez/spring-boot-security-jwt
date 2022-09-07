@@ -1,0 +1,19 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/third-party/sum-percentage"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "percentage": 10
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

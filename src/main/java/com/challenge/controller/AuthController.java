@@ -1,4 +1,4 @@
-package com.challenge.controllers;
+package com.challenge.controller;
 
 import java.util.HashSet;
 import java.util.List;
