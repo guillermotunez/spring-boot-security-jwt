@@ -17,6 +17,7 @@ services:
   spring-boot-app:
     depends_on:
       - postgresql-db
+      - redis
     build: ./
     restart: on-failure
     env_file: ./.env
@@ -28,11 +29,27 @@ services:
         "spring.datasource.username" : "$POSTGRES_USER",
         "spring.datasource.password" : "$POSTGRES_PASSWORD",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect",
-        "spring.jpa.hibernate.ddl-auto" : "none"
+        "spring.jpa.hibernate.ddl-auto" : "none",
+        "retrofit.percentage.url" : "http://mock-service:9999/",
+        "spring.redis.host" : "redis"
       }'
 #    volumes:
 #      - .m2:/root/.m2
     stdin_open: true
     tty: true
+
+  mock-service:
+    image: rodolpheche/wiremock:2.27.2
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./mock-services:/home/wiremock/mappings
+    command: --verbose --global-response-templating --local-response-templating --port 9999
+
+  redis:
+    image: redis:6.2.4
+    ports:
+      - "6379:6379"
+
 volumes:
   db:

@@ -1,4 +1,4 @@
-package com.challenge.config;
+package com.challenge.config.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
+                .antMatchers("/api/math/**").permitAll()
                 .antMatchers("/actuator/httptrace").permitAll()
                 .anyRequest().authenticated();
 
