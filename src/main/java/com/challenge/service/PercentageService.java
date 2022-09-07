@@ -2,13 +2,10 @@ package com.challenge.service;
 
 import com.challenge.thirdparty.PercentagesApiCallImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 public class PercentageService {
@@ -27,7 +24,7 @@ public class PercentageService {
     }
 
     @Caching(put = @CachePut( value = "percentageApiCache", key = "#root.target.API_CACHE_KEY"))
-    public Double setPercentage() {
+    private Double setPercentage() {
         return percentagesApiCall.getSumPercentage().getPercentage();
     }
 }
