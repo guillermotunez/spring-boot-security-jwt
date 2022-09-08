@@ -1,7 +1,7 @@
 package com.challenge.controller;
 
 import com.challenge.controller.response.SumPlusPercentage;
-import com.challenge.service.SumPlusPercentageService;
+import com.challenge.service.MathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/math")
 public class MathController {
 
-    private final SumPlusPercentageService sumPlusPercentageService;
+    private final MathService sumPlusPercentageService;
 
-    public MathController(@Autowired SumPlusPercentageService sumPlusPercentageService) {
+    public MathController(@Autowired MathService sumPlusPercentageService) {
         this.sumPlusPercentageService = sumPlusPercentageService;
     }
 
