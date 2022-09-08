@@ -6,13 +6,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 @Service
-public class SumPlusPercentageService {
+public class MathService {
 
     public static final String MISSING_PARAMETER = "El '%s' parámetro no está presente.";
 
     private PercentageService percentageService;
 
-    public SumPlusPercentageService(@Autowired PercentageService percentageService) {
+    public MathService(@Autowired PercentageService percentageService) {
         this.percentageService = percentageService;
     }
 

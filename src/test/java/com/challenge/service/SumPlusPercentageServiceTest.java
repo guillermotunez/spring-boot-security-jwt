@@ -17,7 +17,7 @@ public class SumPlusPercentageServiceTest {
     @Mock
     private PercentageService percentageService;
     @InjectMocks
-    private SumPlusPercentageService unitService;
+    private MathService unitService;
 
     @Test
     public void sumPlusPercentageTest() {
