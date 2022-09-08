@@ -14,6 +14,7 @@
 ## Pruebas sobre las funcionalidades existentes con Postman:
 
 - usar la colección de Postman para probar las diferentes funcionalidades.
+- Challenge.postman_collection_v2.1.json ubicada en la raiz del repositorio de github.
  
 ## Parado del proceso Docker(compose):
 
